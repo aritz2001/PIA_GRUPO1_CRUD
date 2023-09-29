@@ -23,4 +23,14 @@ class Persistencia:
 
         with open("./bbdd.json", "w", encoding='utf8') as outfile:
             outfile.write(temp)
-    
+      def modificar_vuelo(self,mi_uuid,atr,valor):  
+        for vuelo in self.datos:
+          if vuelo.id == mi_uuid:
+              if atr == "destino":
+                  vuelo.destino = valor
+                  print(atr,"Antes de Modificarlo:", vuelo.destino)
+              else:
+                vuelo.salida = valor
+                print(atr,"Despues de Modificarlo:", vuelo.salida)
+        self.guardar()
+      
