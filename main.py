@@ -39,7 +39,7 @@ def menu():
                     lectura.modificar_vuelo(mi_uuid,atr,valores)
                 case 4:
                     mi_uuid = input("Ingrese el uuid del vuelo a eliminar")
-                    vuelo.vuelo.borrar_vuelo(mi_uuid)
+                    lectura.borrar_vuelo(mi_uuid)
                 case 0:
                     print("Has salido de la aplicacion")
                     break

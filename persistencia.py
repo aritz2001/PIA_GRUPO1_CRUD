@@ -33,4 +33,16 @@ class Persistencia:
                 vuelo.salida = valor
                 print(atr,"Despues de Modificarlo:", vuelo.salida)
         self.guardar()
-      
+        
+    
+      def borrar_vuelo(self ,mi_uuid):
+        for vuelo in self.datos:
+          if vuelo.id == mi_uuid:
+              self.datos.remove(vuelo)
+              
+        self.guardar()
+             
+
+              
+            
+        
