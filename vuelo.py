@@ -1,5 +1,5 @@
 import uuid
-class Vuelo:
+class vuelo:
     def __init__(self):
         pass
 
