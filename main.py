@@ -28,16 +28,18 @@ def menu():
                     mi_uuid = uuid.uuid4()
                     destino = input("Ingrese el destino")
                     plazas_libres = int(input("Ingrese la cantidad de plazas libres"))
-                    vuelo(date1,mi_uuid, destino,plazas_libres)
+                    v= vuelo.vuelo.crear(date1,mi_uuid, destino,plazas_libres)
+                    lectura.datos.append(v)
+                    lectura.guardar()
 
                 case 3:
                     mi_uuid = input("Ingrese el uuid del vuelo a modificar")
                     atr = input("Ingrese el valor a modificar (destino,plazas_libres) ")
                     valores = input(f"Ingrese el nuevo valor a modificar {atr}: ")
-                    vuelo.modificar_vuelo(mi_uuid,atr,valores)
+                    lectura.modificar_vuelo(mi_uuid,atr,valores)
                 case 4:
                     mi_uuid = input("Ingrese el uuid del vuelo a eliminar")
-                    vuelo.borrar_vuelo(mi_uuid)
+                    vuelo.vuelo.borrar_vuelo(mi_uuid)
                 case 0:
                     print("Has salido de la aplicacion")
                     break
