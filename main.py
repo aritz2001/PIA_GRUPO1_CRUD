@@ -19,29 +19,29 @@ def menu():
                     valores = ""
                     lectura.leer()
                 case 2:
-                    year = int(input("Ingrese un año"))
-                    month = int(input("Ingrese un mes"))
-                    day = int(input("Ingrese un día"))
-                    hour = int(input("Ingrese una hora"))
-                    minute = int(input("Ingrese un minuto"))
+                    year = int(input("Ingrese un año\n"))
+                    month = int(input("Ingrese un mes\n"))
+                    day = int(input("Ingrese un día\n"))
+                    hour = int(input("Ingrese una hora\n"))
+                    minute = int(input("Ingrese un minuto\n"))
                     salida = datetime.datetime(year, month, day, hour, minute, tzinfo=datetime.timezone.utc).timestamp()
-                    destino = input("Ingrese el destino")
-                    plazas = int(input("Ingrese la cantidad de plazas libres"))
+                    destino = input("Ingrese el destino\n")
+                    plazas = int(input("Ingrese la cantidad de plazas libres\n"))
                     lectura.crear_vuelo(destino,salida,plazas)
 
                 case 3:
-                    mi_uuid = input("Ingrese el uuid del vuelo a modificar")
-                    atr = input("Ingrese el valor a modificar (destino,plazas_libres) ")
-                    valores = input(f"Ingrese el nuevo valor a modificar {atr}: ")
+                    mi_uuid = input("Ingrese el uuid del vuelo a modificar\n")
+                    atr = input("Ingrese el valor a modificar (destino,plazas_libres)\n")
+                    valores = input(f"Ingrese el nuevo valor a modificar {atr}: \n")
                     lectura.modificar_vuelo(mi_uuid,atr,valores)
                 case 4:
-                    mi_uuid = input("Ingrese el uuid del vuelo a eliminar")
+                    mi_uuid = input("Ingrese el uuid del vuelo a eliminar\n")
                     lectura.borrar_vuelo(mi_uuid)
                 case 0:
-                    print("Has salido de la aplicacion")
+                    print("Has salido de la aplicacion\n")
                     break
                 case _:
-                    print("Opción incorrecta")
+                    print("Opción incorrecta\n")
         except ValueError:
-            print("No se admiten valores de tipo string")
+            print("No se admiten valores de tipo string\n")
 menu()
