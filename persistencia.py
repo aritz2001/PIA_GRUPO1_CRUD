@@ -1,7 +1,7 @@
 
 import json
+
 import vuelo
-import uuid
 
 class Persistencia:
     
@@ -27,10 +27,7 @@ class Persistencia:
 
       def crear_vuelo(self,destino: str, salida: float, plazas: int):
             v=vuelo.vuelo()
-            v.plazas=plazas
-            v.id=f"{uuid.uuid1()}"
-            v.destino = destino
-            v.salida=f"{salida}"
+            v.__nuevo__(destino, salida, plazas)          
             self.datos.append(v)
             print("Insertando ...")
             self.guardar()
@@ -41,12 +38,15 @@ class Persistencia:
         for vuelo in self.datos:
           if vuelo.id == mi_uuid:
               if atr == "destino":
-                  vuelo.destino = valor
                   print(atr,"Antes de Modificarlo:", vuelo.destino)
+                  vuelo.destino = valor
+                  print(atr,"Despues de Modificarlo:", vuelo.destino)
               else:
-                vuelo.salida = valor
-                print(atr,"Despues de Modificarlo:", vuelo.salida)
-                print("Modificando ...")
+                print(atr,"Antes de Modificarlo:", vuelo.plazas)
+                vuelo.destino = valor
+                print(atr,"Despues de Modificarlo:", vuelo.plazas)
+                
+        print("Modificando ...")
         self.guardar()
         print("Modificado con éxito")
     

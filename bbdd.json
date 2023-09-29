@@ -1,26 +1,26 @@
 [
     {
-        "id":"f2271e4e-5e8f-11ee-b828-27805c28a260",
-        "destino":"Barcelona",
-        "salida":"1695968411.172631",
-        "plazas":20
+        "id": "2d8a29945eaf11eeb82827805c28a260",
+        "destino": "Barcelona",
+        "salida": 1695968411.172631,
+        "plazas": 20
     },
     {
-        "id":"54b950b8-5e90-11ee-b828-27805c28a260",
-        "destino":"Londres",
-        "salida":"1695968411.172631",
-        "plazas":30
+        "id": "522fcca45eaf11eeb82827805c28a260",
+        "destino": "Londres",
+        "salida": 1695968411.172631,
+        "plazas": 30
     },
     {
-        "id":"854394e6-5e90-11ee-b828-27805c28a260",
-        "destino":"New York",
-        "salida":"1695968411.172631",
-        "plazas":40
+        "id": "62da0e7a5eaf11eeb82827805c28a260",
+        "destino": "New York",
+        "salida": 1695968411.172631,
+        "plazas": 40
     },
     {
-        "id":"a8f7a88c-5e90-11ee-b828-27805c28a260",
-        "destino":"Boston",
-        "salida":"1695968411.172631",
-        "plazas":50
+        "id": "6d7fc7b65eaf11eeb82827805c28a260",
+        "destino": "Boston",
+        "salida": 1695968411.172631,
+        "plazas": 50
     }    
 ]
