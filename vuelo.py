@@ -8,3 +8,5 @@ class vuelo:
         self.destino = destino
         self.hora_salida
         self.plazas_libres
+    
+    
