@@ -26,8 +26,8 @@ def menu():
                     minute = int(input("Ingrese un minuto"))
                     salida = datetime.datetime(year, month, day, hour, minute, tzinfo=datetime.timezone.utc).timestamp()
                     destino = input("Ingrese el destino")
-                    plazas_libres = int(input("Ingrese la cantidad de plazas libres"))
-                    lectura.crear_vuelo(destino,salida,plazas_libres)
+                    plazas = int(input("Ingrese la cantidad de plazas libres"))
+                    lectura.crear_vuelo(destino,salida,plazas)
 
                 case 3:
                     mi_uuid = input("Ingrese el uuid del vuelo a modificar")
