@@ -1,5 +1,11 @@
 import datetime
 import uuid
+import persistencia
+
+
+lectura = persistencia.Persistencia()
+lectura.cargar()
+lectura.leer()
 
 def menu():
 
