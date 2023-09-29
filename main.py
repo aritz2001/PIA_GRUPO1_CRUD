@@ -4,7 +4,7 @@ import uuid
 def menu():
 
     while True:
-        opcion = int(input("¿Que desea hacer?\n 1-Leer el fichero \n 2-Crear un vuelo \n 3-Modificar un vuelo \n 4-Borrar un vuelo \n 0- Salir del programa \n"))
+        opcion = int(input("¿Que desea hacer?\n 1-Leer el fichero \n 2-Crear un vuelo \n 3-Modificar un vuelo \n 4-Borrar un vuelo \n 0- Salir del programa \n "))
         match opcion:
             case 1:
                 atr = ""
