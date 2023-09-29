@@ -17,20 +17,17 @@ def menu():
                 case 1:
                     atr = ""
                     valores = ""
-                    vuelo.leer_fichero(atr,valores)
+                    lectura.leer()
                 case 2:
                     year = int(input("Ingrese un año"))
                     month = int(input("Ingrese un mes"))
                     day = int(input("Ingrese un día"))
                     hour = int(input("Ingrese una hora"))
                     minute = int(input("Ingrese un minuto"))
-                    date1 = datetime.datetime.fromtimestamp(year, month, day,hour,minute)
-                    mi_uuid = uuid.uuid4()
+                    salida = datetime.datetime(year, month, day, hour, minute, tzinfo=datetime.timezone.utc).timestamp()
                     destino = input("Ingrese el destino")
                     plazas_libres = int(input("Ingrese la cantidad de plazas libres"))
-                    v= vuelo.vuelo.crear(date1,mi_uuid, destino,plazas_libres)
-                    lectura.datos.append(v)
-                    lectura.guardar()
+                    lectura.crear_vuelo(destino,salida,plazas_libres)
 
                 case 3:
                     mi_uuid = input("Ingrese el uuid del vuelo a modificar")

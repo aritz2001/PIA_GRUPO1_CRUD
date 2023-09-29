@@ -1,6 +1,7 @@
 
 import json
 import vuelo
+import uuid
 
 class Persistencia:
     
@@ -23,7 +24,20 @@ class Persistencia:
 
         with open("./bbdd.json", "w", encoding='utf8') as outfile:
             outfile.write(temp)
-      def modificar_vuelo(self,mi_uuid,atr,valor):  
+
+      def crear_vuelo(self,destino: str, salida: float, plazas: int):
+            v=vuelo.vuelo()
+            v.plazas=plazas
+            v.id=f"{uuid.uuid1()}"
+            v.destino = destino
+            v.salida=f"{salida}"
+            self.datos.append(v)
+            print("Insertando ...")
+            self.guardar()
+            print("Insertado con éxito")
+
+
+      def modificar_vuelo(self,mi_uuid,atr,valor):
         for vuelo in self.datos:
           if vuelo.id == mi_uuid:
               if atr == "destino":
@@ -32,15 +46,17 @@ class Persistencia:
               else:
                 vuelo.salida = valor
                 print(atr,"Despues de Modificarlo:", vuelo.salida)
+                print("Modificando ...")
         self.guardar()
-        
+        print("Modificado con éxito")
     
       def borrar_vuelo(self ,mi_uuid):
         for vuelo in self.datos:
           if vuelo.id == mi_uuid:
               self.datos.remove(vuelo)
-              
+        print("Borrando ...")
         self.guardar()
+        print("Borrado con éxito.")
              
 
               
