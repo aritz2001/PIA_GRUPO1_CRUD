@@ -38,12 +38,15 @@ class Persistencia:
         for vuelo in self.datos:
           if vuelo.id == mi_uuid:
               if atr == "destino":
-                  vuelo.destino = valor
                   print(atr,"Antes de Modificarlo:", vuelo.destino)
+                  vuelo.destino = valor
+                  print(atr,"Despues de Modificarlo:", vuelo.destino)
               else:
-                vuelo.salida = valor
-                print(atr,"Despues de Modificarlo:", vuelo.salida)
-                print("Modificando ...")
+                print(atr,"Antes de Modificarlo:", vuelo.plazas)
+                vuelo.destino = valor
+                print(atr,"Despues de Modificarlo:", vuelo.plazas)
+                
+        print("Modificando ...")
         self.guardar()
         print("Modificado con éxito")
     
